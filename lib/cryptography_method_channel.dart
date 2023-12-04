@@ -11,7 +11,32 @@ class MethodChannelCryptography extends CryptographyPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version =
+        await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
+  }
+
+  @override
+  Future<String?> aesEncrypt(String text, String key) async {
+    final cipherText = await methodChannel.invokeMethod<String>(
+      'aesEncrypt',
+      <String, dynamic>{
+        'text': text,
+        'key': key,
+      },
+    );
+    return cipherText;
+  }
+
+  @override
+  Future<String?> aesDecrypt(String text, String key) async {
+    final plainText = await methodChannel.invokeMethod<String>(
+      'aesDecrypt',
+      <String, dynamic>{
+        'text': text,
+        'key': key,
+      },
+    );
+    return plainText;
   }
 }

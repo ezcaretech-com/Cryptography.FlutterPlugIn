@@ -26,4 +26,12 @@ abstract class CryptographyPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<String?> aesEncrypt(String text, String key) {
+    throw UnimplementedError('aesEncrypt(String text, String key) has not been implemented.');
+  }
+
+  Future<String?> aesDecrypt(String text, String key) {
+    throw UnimplementedError('aesDecrypt(String text, String key) has not been implemented.');
+  }
 }

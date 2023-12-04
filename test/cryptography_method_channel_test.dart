@@ -24,4 +24,16 @@ void main() {
   test('getPlatformVersion', () async {
     expect(await platform.getPlatformVersion(), '42');
   });
+
+  test('aesEncrypt', () async {
+    const key = 'EzForm_Generator1111111111111111';
+    const plainText = 'CCC0EMR';
+    expect(await platform.aesEncrypt(plainText, key), '42');
+  });
+
+  test('aesDecrypt', () async {
+    const key = 'EzForm_Generator1111111111111111';
+    const plainText = 'CCC0EMR';
+    expect(await platform.aesDecrypt(plainText, key), '42');
+  });
 }
